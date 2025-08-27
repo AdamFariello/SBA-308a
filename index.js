@@ -34,5 +34,6 @@ function init() {
 }
 init()
 
+
 let buttonEl = document.getElementById("button")
 buttonEl.addEventListener("click", init)
