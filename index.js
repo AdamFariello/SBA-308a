@@ -1,25 +1,28 @@
 const baseUrl = "https://api.quotable.io";
 
 
-//let textArea = document.getElementById("textarea")
+let textEl = document.getElementById("quote")
 async function randomQuote() {
     const url = "https://api.quotable.io/quotes/random"
 
     const response = await fetch(url);
     let result = await response.json();
     let quote = result[0].content;
-    textArea.innerText = quote;
+    textEl.innerText = quote;
 }
-//randomQuote()
+randomQuote()
 
 let imageEl = document.getElementById("image")
+const url = "https://random.dog/woof.json"; //"https://random-d.uk/api"
 async function getRandomDog() {
-    const url = "https://random.dog/woof.json";
-    //const url = "https://random-d.uk/api"
-    const response = await fetch(url);
-    
-    const image = await response.json(); //.text() didnt give obj
-    const imageUrl = await image.url;
+
+    //TODO: change function to allow .mp4 for dog quoting
+    let imageUrl = null;
+    do {
+        const response = await fetch(url);
+        const image = await response.json(); //.text() didnt give obj
+        imageUrl = await image.url;
+    } while(imageUrl.split(".")[2] == "mp4")
 
     imageEl.setAttribute("src", imageUrl)
 }
