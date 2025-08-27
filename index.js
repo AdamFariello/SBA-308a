@@ -9,10 +9,12 @@ async function randomQuote() {
     //console.log(result)
     //console.log(JSON.stringify(result, null, "\t"))
 
-    let quote = result[0].content;
-    console.log(quote)
-
-    //let author = result[0].author;
-    //console.log(author)
+    //TODO: work around this returning promises
+    //let quote = await result[0].content;
+    //console.log(quote)
+    return result[0].content;
 }
-randomQuote();
+
+async function getRandomBear() {
+    
+}
