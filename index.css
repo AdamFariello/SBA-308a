@@ -4,8 +4,6 @@
   font-style: normal;
 }
 
-
-
 :root {
   --width: 300px;
   --height: 300px;
@@ -48,4 +46,8 @@
     width: var(--width);
     height: fit-content;
     font-family: "Lobster", sans-serif;
+}
+
+body {
+    background: radial-gradient(#ffea00, #ff7b00);
 }
