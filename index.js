@@ -1,7 +1,7 @@
 const baseUrl = "https://api.quotable.io";
 
 
-let textArea = document.getElementById("textarea")
+//let textArea = document.getElementById("textarea")
 async function randomQuote() {
     const url = "https://api.quotable.io/quotes/random"
 
@@ -10,8 +10,9 @@ async function randomQuote() {
     let quote = result[0].content;
     textArea.innerText = quote;
 }
-randomQuote()
+//randomQuote()
 
+let imageEl = document.getElementById("image")
 async function getRandomDog() {
     const url = "https://random.dog/woof.json";
     //const url = "https://random-d.uk/api"
@@ -19,5 +20,7 @@ async function getRandomDog() {
     
     const image = await response.json(); //.text() didnt give obj
     const imageUrl = await image.url;
-    return imageUrl;
+
+    imageEl.setAttribute("src", imageUrl)
 }
+getRandomDog()
