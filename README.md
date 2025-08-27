@@ -1,3 +1,9 @@
 # SBA 308A
-Repository for the perscholas SBA 308A assignment
+Little website where you get inspirational quotes from some really intelligent dogs.   
 
+## Install
+Clone the repo using   
+```bash
+git clone https://github.com/AdamFariello/SBA-308a
+```   
+Open it in vscode, and open index.html using whatever prefered (html) webserver    
