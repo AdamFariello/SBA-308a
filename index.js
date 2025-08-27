@@ -15,6 +15,13 @@ async function randomQuote() {
     return result[0].content;
 }
 
-async function getRandomBear() {
+async function getRandomDog() {
+    const url = "https://random.dog/woof.json";
+    //const url = "https://random-d.uk/api"
+    const response = await fetch(url);
     
+    const image = await response.json(); //.text() didnt give obj
+    const imageUrl = await image.url;
+    return imageUrl;
 }
+getRandomDog()
