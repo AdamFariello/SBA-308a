@@ -10,7 +10,6 @@ async function randomQuote() {
     let quote = result[0].content;
     textEl.innerText = quote;
 }
-randomQuote()
 
 let imageEl = document.getElementById("image")
 const url = "https://random.dog/woof.json"; //"https://random-d.uk/api"
@@ -26,4 +25,14 @@ async function getRandomDog() {
 
     imageEl.setAttribute("src", imageUrl)
 }
-getRandomDog()
+
+
+
+function init() {
+    randomQuote()
+    getRandomDog()
+}
+init()
+
+let buttonEl = document.getElementById("button")
+buttonEl.addEventListener("click", init)
